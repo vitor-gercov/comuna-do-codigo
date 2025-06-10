@@ -4,7 +4,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-componente-raiz',
   imports: [
     RouterOutlet,
     RouterLink,
@@ -15,5 +15,4 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'comuna-do-codigo';
 }

@@ -1,5 +1,5 @@
 <main>
-    <div class="hero">
+    <section class="hero">
         <img src="/assets/logo.png" alt="Logo" aria-hidden="true" height="300" width="300" class="logo">
         <h1>
             Comuna do Código
@@ -7,13 +7,21 @@
         <p>
             Código para todos, por todos.
         </p>
-    </div>
-    <div class="components">
+    </section>
+    <section class="concepts">
+        <h2>
+            Conceitos
+        </h2>
+        <button mat-stroked-button [routerLink]="['anchor']">
+            Anchoring
+        </button>
+    </section>
+    <section class="components">
         <h2>
             Componentes
         </h2>
-        <button mat-stroked-button [routerLink]="['componentes', 'botoes']">
+        <button mat-stroked-button [routerLink]="['componentes', 'botoes']" #botaoBonitao>
             Botões
         </button>
-    </div>
+    </section>
 </main>
