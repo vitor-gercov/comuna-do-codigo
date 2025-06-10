@@ -14,4 +14,9 @@
 .concepts {
     padding: 4rem 1rem;
     background-color: rgb(32, 32, 32);
+
+    .sections {
+        display: flex;
+        gap: 1rem;
+    }
 }
