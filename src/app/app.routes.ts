@@ -14,6 +14,10 @@ export const routes: Routes = [
         loadComponent: () => import('../app/pages/anchor/anchor.component').then(component => component.AnchorComponent)
     },
     {
+        path: 'flexbox',
+        loadComponent: () => import('../app/pages/flexbox/flexbox.component').then(component => component.FlexboxComponent)
+    },
+    {
         path: 'componentes',
         children: [
             {
