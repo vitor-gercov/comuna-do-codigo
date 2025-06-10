@@ -1,0 +1,29 @@
+name: Create PR
+
+on:
+  push:
+    branches:
+      - "feature**" # Support wildcard matching
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: pull-request
+        uses: diillson/auto-pull-request@v1.0.1
+        with:
+          destination_branch: "main" # If blank, default: main
+          pr_title: "main <- ${{ github.ref_name }}" # Title of pull request
+          pr_body: | # Full markdown support, requires pr_title to be set
+            #Feature:
+
+            ## Descrição:
+
+            ## Alterações técnicas:
+          # pr_template: ".github/PULL_REQUEST_TEMPLATE.md"   # Path to pull request template, requires pr_title to be set, excludes pr_body
+          pr_reviewer: "vitor-gercov,gabrielLudu" # Comma-separated list (no spaces)
