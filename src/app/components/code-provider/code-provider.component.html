@@ -1,0 +1,31 @@
+@if(html() || css() || js()) {
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    @if(html()) {
+    <mat-tab label="HTML">
+        <pre>
+                    <code>
+                        {{ html() }}
+                    </code>
+                </pre>
+    </mat-tab>
+    }
+    @if(css()) {
+    <mat-tab label="CSS">
+        <pre>
+                <code>
+                    {{ css() }}
+                </code>
+            </pre>
+    </mat-tab>
+    }
+    @if(js()) {
+    <mat-tab label="JS">
+        <pre>
+                <code>
+                    {{ js() }}
+                </code>
+            </pre>
+    </mat-tab>
+    }
+</mat-tab-group>
+}
