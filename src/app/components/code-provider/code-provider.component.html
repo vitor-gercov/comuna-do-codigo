@@ -1,31 +1,31 @@
 @if(html() || css() || js()) {
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-    @if(html()) {
-    <mat-tab label="HTML">
+<section class="main_container">
+    <section class="tabs">
+        @if(html()) {
+        <button (click)="selectedTab.set('html')" [ngClass]="{'--selected': selectedTab() === 'html'}">
+            HTML
+        </button>
+        }
+        @if(css()) {
+        <button (click)="selectedTab.set('css')" [ngClass]="{'--selected': selectedTab() === 'css'}">
+            CSS
+        </button>
+        }
+        @if(js()) {
+        <button (click)="selectedTab.set('js')" [ngClass]="{'--selected': selectedTab() === 'js'}">
+            JS
+        </button>
+        }
+    </section>
+    <section class="code">
         <pre>
-                    <code>
-                        {{ html() }}
-                    </code>
-                </pre>
-    </mat-tab>
-    }
-    @if(css()) {
-    <mat-tab label="CSS">
-        <pre>
-                <code>
-                    {{ css() }}
-                </code>
-            </pre>
-    </mat-tab>
-    }
-    @if(js()) {
-    <mat-tab label="JS">
-        <pre>
-                <code>
-                    {{ js() }}
-                </code>
-            </pre>
-    </mat-tab>
-    }
-</mat-tab-group>
+        <code>{{ tabContent() }}</code>
+    </pre>
+    </section>
+    <footer class="options">
+        <button (click)="copyCodeToClipboard()">
+            Copiar código
+        </button>
+    </footer>
+</section>
 }
