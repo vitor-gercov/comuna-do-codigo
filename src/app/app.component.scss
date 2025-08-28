@@ -7,9 +7,13 @@ mat-toolbar {
     right: 0;
 }
 
-router-outlet {
-    display: block;
+main {
+    // max-width: 1072px;
+    display: grid;
+    grid-template-columns: minmax(auto, 1072px);
+    justify-content: center;
     padding-top: 56px;
+    padding-inline: 1.5rem;
 }
 
 .home_button {
@@ -17,7 +21,7 @@ router-outlet {
 }
 
 @media (min-width: 600px) {
-    router-outlet {
+    main {
         padding-top: 64px;
     }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CodeProviderComponent } from '@components';
 import { CodeProvider } from '@types';
 
@@ -12,10 +12,17 @@ import { CodeProvider } from '@types';
 })
 export class AnchorComponent {
   code: CodeProvider = {
-    html: `<h1>Hello ludu!</h1>`,
+    html:
+      `
+      <h1>
+        Hello ludu!
+      </h1>
+      `,
     css:
-      `h1 {
+      `
+      h1 {
         color: red;
-      }`,
+      }
+      `
   };
 }

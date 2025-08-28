@@ -1,5 +1,51 @@
-mat-tab-group {
-    border: 1px solid var(--mat-sys-primary);
+.main_container {
+    padding: 1.5rem;
     border-radius: .5rem;
-    padding: 1rem;
+    background-color: black;
+}
+
+.tabs {
+    display: grid;
+    grid-auto-flow: column;
+    gap: .5rem;
+
+    button {
+        padding: .5rem 1rem;
+        border: none;
+        border-radius: .5rem;
+        font-weight: 700;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all .25s ease-in;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        &.--selected {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: yellow;
+        }
+    }
+}
+
+.options {
+    display: flex;
+    justify-content: end;
+
+    button {
+        padding: .5rem 1rem;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: .5rem;
+        font-weight: 700;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all .25s ease-in;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    }
 }
