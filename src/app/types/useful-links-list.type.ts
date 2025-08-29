@@ -1,0 +1,1 @@
+export type UsefulLinksList = Array<{ text: string, link: string; }>;
