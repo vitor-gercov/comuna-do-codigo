@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, computed, inject, input, OnInit, signal } from '@angular/core';
+import { Component, computed, ElementRef, inject, input, OnInit, signal, viewChild } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CodeProvider } from '@types';
 import { Clipboard } from '@angular/cdk/clipboard';
@@ -15,6 +15,7 @@ import { Clipboard } from '@angular/cdk/clipboard';
 })
 export class CodeProviderComponent implements OnInit {
   code = input.required<CodeProvider>();
+  feedbackDialog = viewChild.required<ElementRef<HTMLDialogElement>>('feedbackDialog');
   html = computed(() => this.code()?.html);
   css = computed(() => this.code()?.css);
   js = computed(() => this.code()?.js);
@@ -31,6 +32,7 @@ export class CodeProviderComponent implements OnInit {
         return undefined;
     }
   });
+  feedbackMessage = signal('Algo deu errado, tente novamente mais tarde.');
 
   private clipboard: Clipboard = inject(Clipboard);
 
@@ -41,10 +43,12 @@ export class CodeProviderComponent implements OnInit {
 
   copyCodeToClipboard(): void {
     const code = this.tabContent();
+    this.feedbackMessage.set('Algo deu errado, tente novamente mais tarde.');
     if (code) {
       this.clipboard.copy(code);
-      window.alert(`${this.selectedTab()?.toUpperCase()} copiado.`);
+      this.feedbackMessage.set(`${this.selectedTab()?.toUpperCase()} copiado.`);
     }
+    this.showfeedbackMessage();
   }
 
   private validateComponentInput(): void {
@@ -62,5 +66,12 @@ export class CodeProviderComponent implements OnInit {
           : this.js()
             ? 'js' : undefined;
     this.selectedTab.set(selectedTab)
+  }
+
+  private showfeedbackMessage(): void {
+    this.feedbackDialog().nativeElement.show();
+    setTimeout(() => {
+      this.feedbackDialog().nativeElement.close();
+    }, 5000);
   }
 }

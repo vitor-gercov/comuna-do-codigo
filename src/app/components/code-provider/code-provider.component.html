@@ -26,6 +26,9 @@
         <button (click)="copyCodeToClipboard()">
             Copiar código
         </button>
+        <dialog #feedbackDialog>
+            {{ feedbackMessage() }}
+        </dialog>
     </footer>
 </section>
 }
