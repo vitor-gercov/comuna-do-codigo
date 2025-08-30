@@ -10,6 +10,10 @@ export const routes: Routes = [
         loadComponent: () => import('../app/pages/sobre/sobre.component').then(component => component.SobreComponent)
     },
     {
+        path: 'dialog',
+        loadComponent: () => import('../app/pages/dialog/dialog.component').then(component => component.DialogComponent)
+    },
+    {
         path: 'anchor',
         loadComponent: () => import('../app/pages/anchor/anchor.component').then(component => component.AnchorComponent)
     },

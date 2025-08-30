@@ -61,3 +61,42 @@ body {
 ::-webkit-scrollbar-button {
   display: none;
 }
+
+.comuna_main_button,
+.comuna_outline_button {
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .5rem;
+  font-weight: 700;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all .25s ease-in;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &.--selected {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: yellow;
+  }
+}
+
+.comuna_main_button {
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.comuna_outline_button {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
