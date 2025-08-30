@@ -2,17 +2,17 @@
 <section class="main_container">
     <section class="tabs">
         @if(html()) {
-        <button (click)="selectedTab.set('html')" [ngClass]="{'--selected': selectedTab() === 'html'}">
+        <button comunaMainButton (click)="selectedTab.set('html')" [ngClass]="{'--selected': selectedTab() === 'html'}">
             HTML
         </button>
         }
         @if(css()) {
-        <button (click)="selectedTab.set('css')" [ngClass]="{'--selected': selectedTab() === 'css'}">
+        <button comunaMainButton (click)="selectedTab.set('css')" [ngClass]="{'--selected': selectedTab() === 'css'}">
             CSS
         </button>
         }
         @if(js()) {
-        <button (click)="selectedTab.set('js')" [ngClass]="{'--selected': selectedTab() === 'js'}">
+        <button comunaMainButton (click)="selectedTab.set('js')" [ngClass]="{'--selected': selectedTab() === 'js'}">
             JS
         </button>
         }
@@ -23,7 +23,7 @@
     </pre>
     </section>
     <footer class="options">
-        <button (click)="copyCodeToClipboard()">
+        <button comunaOutlineButton (click)="copyCodeToClipboard()">
             Copiar código
         </button>
         <dialog #feedbackDialog>
