@@ -62,6 +62,10 @@ body {
   display: none;
 }
 
+button::selection {
+  background-color: transparent;
+}
+
 .comuna_main_button,
 .comuna_outline_button {
   padding: .5rem 1rem;
@@ -99,4 +103,17 @@ body {
 
 .comuna_outline_button {
   border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+fieldset {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: .5rem;
+  background-color: black;
+  margin: 1rem 0;
+  padding: 1rem;
+
+  .option,
+  .option * {
+    cursor: pointer;
+  }
 }

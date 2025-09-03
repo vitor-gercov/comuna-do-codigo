@@ -1,4 +1,43 @@
 <h1>
     Dialog
 </h1>
+<section class="sandbox">
+    <h2>
+        Sandbox
+    </h2>
+    <button comunaMainButton (click)="dialog.showModal()">
+        Abrir dialog
+    </button>
+    <dialog #dialog>
+        <header>
+            <h2>
+                Hello world!
+            </h2>
+            <button aria-label="fechar dialog" (click)="dialog.close()">
+                ❌
+            </button>
+        </header>
+    </dialog>
+</section>
+<section class="options">
+    <fieldset id="options_fieldset">
+        <legend>
+            Opções
+        </legend>
+        <span class="option">
+            <input type="checkbox" id="bottomsheet_checkbox" name="bottomsheet_checkbox">
+            <label for="bottomsheet_checkbox">
+                Bottomsheet
+            </label>
+        </span>
+        <!-- <span class="radio_option">
+            <input type="radio" id="left_handed_radio" name="dominant_hand" value="left_handed"
+                [(ngModel)]="dominantHand">
+            <label for="left_handed_radio">
+                <span aria-hidden="true">👈</span> Sou canhoto
+            </label>
+        </span> -->
+    </fieldset>
+</section>
+<app-code-provider [code]="code()"></app-code-provider>
 <app-useful-links-list [usefulLinksList]="usefulLinksList"></app-useful-links-list>
