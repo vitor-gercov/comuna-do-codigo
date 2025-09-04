@@ -8,7 +8,9 @@
     <button comunaMainButton (click)="dialog.showModal()">
         Abrir dialog
     </button>
-    <dialog #dialog>
+    <dialog #dialog [ngClass]="{
+        'bottomsheet': dialogTypeSelected() === 'bottomsheet'
+    }">
         <header>
             <h2>
                 Hello world!
@@ -24,19 +26,19 @@
         <legend>
             Opções
         </legend>
-        <span class="option">
-            <input type="checkbox" id="bottomsheet_checkbox" name="bottomsheet_checkbox">
-            <label for="bottomsheet_checkbox">
+        <span class="radio_option">
+            <input type="radio" id="dialog_radio" name="dialog_type" value="dialog" [(ngModel)]="dialogTypeSelected">
+            <label for="dialog_radio">
+                Modal
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="bottomsheet_radio" name="dialog_type" value="bottomsheet"
+                [(ngModel)]="dialogTypeSelected">
+            <label for="bottomsheet_radio">
                 Bottomsheet
             </label>
         </span>
-        <!-- <span class="radio_option">
-            <input type="radio" id="left_handed_radio" name="dominant_hand" value="left_handed"
-                [(ngModel)]="dominantHand">
-            <label for="left_handed_radio">
-                <span aria-hidden="true">👈</span> Sou canhoto
-            </label>
-        </span> -->
     </fieldset>
 </section>
 <app-code-provider [code]="code()"></app-code-provider>

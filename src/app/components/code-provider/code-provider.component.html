@@ -19,16 +19,16 @@
     </section>
     <section class="code">
         <pre>
-        <code>{{ tabContent() }}</code>
-    </pre>
+            <code>{{ tabContent() }}</code>
+        </pre>
+        <div class="options">
+            <button comunaOutlineButton (click)="copyCodeToClipboard()">
+                Copiar código
+            </button>
+            <dialog #feedbackDialog>
+                {{ feedbackMessage() }}
+            </dialog>
+        </div>
     </section>
-    <footer class="options">
-        <button comunaOutlineButton (click)="copyCodeToClipboard()">
-            Copiar código
-        </button>
-        <dialog #feedbackDialog>
-            {{ feedbackMessage() }}
-        </dialog>
-    </footer>
 </section>
 }

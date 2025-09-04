@@ -10,9 +10,11 @@
     gap: .5rem;
 }
 
+
 .options {
     display: flex;
     justify-content: end;
+    margin-top: 1rem;
 
     dialog {
         bottom: 1.5rem;
@@ -22,4 +24,10 @@
         color: black;
         font-weight: bold;
     }
+}
+
+.code {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
 }
