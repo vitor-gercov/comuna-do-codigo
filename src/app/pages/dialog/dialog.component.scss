@@ -1,0 +1,34 @@
+dialog {
+    width: 100%;
+    max-width: 1270px;
+    border-radius: 1rem;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            border: none;
+            height: 3rem;
+            width: 3rem;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+        }
+    }
+}
+
+.bottomsheet {
+    margin-bottom: 0;
+    border-radius: 1rem 1rem 0 0;
+    transform: translateY(0);
+    transition: transform .25s ease-in;
+
+    @starting-style {
+        transform: translateY(100%);
+    }
+}

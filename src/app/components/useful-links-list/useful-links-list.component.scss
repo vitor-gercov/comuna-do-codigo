@@ -1,0 +1,13 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+a {
+    color: white;
+
+    &:visited {
+        color: rgb(156, 156, 156);
+    }
+}

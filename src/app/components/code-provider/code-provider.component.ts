@@ -3,12 +3,15 @@ import { Component, computed, ElementRef, inject, input, OnInit, signal, viewChi
 import { MatTabsModule } from '@angular/material/tabs';
 import { CodeProvider } from '@types';
 import { Clipboard } from '@angular/cdk/clipboard';
+import { ComunaMainButtonDirective, ComunaOutlineButtonDirective } from '@directives';
 
 @Component({
   selector: 'app-code-provider',
   imports: [
     MatTabsModule,
-    NgClass
+    NgClass,
+    ComunaMainButtonDirective,
+    ComunaOutlineButtonDirective
   ],
   templateUrl: './code-provider.component.html',
   styleUrl: './code-provider.component.scss'
