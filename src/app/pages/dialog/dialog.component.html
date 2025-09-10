@@ -2,14 +2,18 @@
     Dialog
 </h1>
 <section class="sandbox">
-    <h2>
-        Sandbox
-    </h2>
-    <button comunaMainButton (click)="dialog.showModal()">
-        Abrir dialog
-    </button>
+    <fieldset>
+        <legend>
+            Sandbox
+        </legend>
+        <button comunaMainButton (click)="dialog.showModal()">
+            Abrir dialog
+        </button>
+    </fieldset>
     <dialog #dialog [ngClass]="{
-        'bottomsheet': dialogTypeSelected() === 'bottomsheet'
+        'bottomsheet': dialogTypeSelected() === 'bottomsheet',
+        'sidebar_left': dialogTypeSelected() === 'sidebar_left',
+        'sidebar_right': dialogTypeSelected() === 'sidebar_right',
     }">
         <header>
             <h2>
@@ -37,6 +41,20 @@
                 [(ngModel)]="dialogTypeSelected">
             <label for="bottomsheet_radio">
                 Bottomsheet
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="sidebar_left_radio" name="dialog_type" value="sidebar_left"
+                [(ngModel)]="dialogTypeSelected">
+            <label for="sidebar_left_radio">
+                Sidebar (esquerda)
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="sidebar_right_radio" name="dialog_type" value="sidebar_right"
+                [(ngModel)]="dialogTypeSelected">
+            <label for="sidebar_right_radio">
+                Sidebar (direita)
             </label>
         </span>
     </fieldset>

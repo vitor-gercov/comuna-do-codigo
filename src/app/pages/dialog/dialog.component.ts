@@ -91,41 +91,190 @@ export class DialogComponent {
           }
           `;
         break;
+
+      case 'sidebar_left':
+        css =
+          `
+          dialog {
+            width: 100%;
+            max-width: 1270px;
+            border-radius: 1rem;
+
+            &::backdrop {
+              background-color: rgba(0, 0, 0, .5);
+            }
+
+            header {
+              display: flex;
+              justify-content: space-between;
+
+              button {
+                border: none;
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+                cursor: pointer;
+                padding: 0;
+              }
+            }
+          }
+
+          .sidebar_left {
+            height: 100vh;
+            max-height: 100vh;
+            margin-left: 0;
+            border-radius: 0;
+            transform: translateX(0);
+            transition: transform .25s ease-in;
+
+            @starting-style {
+              transform: translateX(-100%);
+            }
+          }
+          `;
+        break;
+      case 'sidebar_right':
+        css =
+          `
+          dialog {
+            width: 100%;
+            max-width: 1270px;
+            border-radius: 1rem;
+
+            &::backdrop {
+              background-color: rgba(0, 0, 0, .5);
+            }
+
+            header {
+              display: flex;
+              justify-content: space-between;
+
+              button {
+                border: none;
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+                cursor: pointer;
+                padding: 0;
+              }
+            }
+          }
+
+          .sidebar_right {
+            height: 100vh;
+            max-height: 100vh;
+            margin-right: 0;
+            border-radius: 0;
+            transform: translateX(0);
+            transition: transform .25s ease-in;
+
+            @starting-style {
+              transform: translateX(100%);
+            }
+          }
+          `;
+        break;
     }
     return css;
   });
+  html = computed<string>(() => {
+    let html = '';
+    switch (this.dialogTypeSelected()) {
+      case 'dialog':
+        html =
+          `
+          <button id="open_dialog_button">
+            Abrir dialog
+          </button>
+
+          <dialog>
+            <header>
+                <h2>
+                    Hello world!
+                </h2>
+                <button id="close_dialog_button" aria-label="fechar dialog">
+                    ❌
+                </button>
+            </header>
+          </dialog>
+          `;
+        break;
+      case 'bottomsheet':
+        html =
+          `
+          <button id="open_dialog_button">
+            Abrir dialog
+          </button>
+
+          <dialog class="bottomsheet">
+            <header>
+                <h2>
+                    Hello world!
+                </h2>
+                <button id="close_dialog_button" aria-label="fechar dialog">
+                    ❌
+                </button>
+            </header>
+          </dialog>
+          `;
+        break;
+      case 'sidebar_left':
+        html =
+          `
+          <button id="open_dialog_button">
+            Abrir dialog
+          </button>
+
+          <dialog class="sidebar_left">
+            <header>
+                <h2>
+                    Hello world!
+                </h2>
+                <button id="close_dialog_button" aria-label="fechar dialog">
+                    ❌
+                </button>
+            </header>
+          </dialog>
+          `;
+        break;
+      case 'sidebar_right':
+        html =
+          `
+          <button id="open_dialog_button">
+            Abrir dialog
+          </button>
+
+          <dialog class="sidebar_right">
+            <header>
+                <h2>
+                    Hello world!
+                </h2>
+                <button id="close_dialog_button" aria-label="fechar dialog">
+                    ❌
+                </button>
+            </header>
+          </dialog>
+          `;
+        break;
+    }
+    return html;
+  });
   code = computed<CodeProvider>(() => {
     return {
-      html:
-        `
-      <button id="open_dialog_button">
-        Abrir dialog
-      </button>
-
-      <dialog #dialog>
-        <header>
-            <h2>
-                Hello world!
-            </h2>
-            <button id="close_dialog_button" aria-label="fechar dialog">
-                ❌
-            </button>
-        </header>
-      </dialog>
-      `,
+      html: this.html(),
       js:
         `
-      const dialog = document.querySelector('dialog');
-      const openDialogButton = document.querySelector('#open_dialog_button');
-      const openDialogButton = document.querySelector('#close_dialog_button');
+        const dialog = document.querySelector('dialog');
+        const openDialogButton = document.querySelector('#open_dialog_button');
+        const openDialogButton = document.querySelector('#close_dialog_button');
 
-      openDialogButton.addEventListener('click', () => {
-        dialog.showModal();
-      });
-      closeDialogButton.addEventListener('click', () => {
-        dialog.close();
-      });
-      `,
+        openDialogButton.addEventListener('click', () => {
+          dialog.showModal();
+        });
+        closeDialogButton.addEventListener('click', () => {
+          dialog.close();
+        });
+        `,
       css: this.css()
     }
   });

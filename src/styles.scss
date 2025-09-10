@@ -106,14 +106,14 @@ button::selection {
 }
 
 fieldset {
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: none;
   border-radius: .5rem;
   background-color: black;
-  margin: 1rem 0;
+  margin-block: .5rem;
   padding: 1rem;
 
-  .option,
-  .option * {
+  .radio_option,
+  .radio_option * {
     cursor: pointer;
   }
 }
