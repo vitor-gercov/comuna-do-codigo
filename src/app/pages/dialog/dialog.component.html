@@ -1,0 +1,61 @@
+<h1>
+    Dialog
+</h1>
+<section class="sandbox">
+    <h2>
+        Sandbox
+    </h2>
+    <button comunaMainButton (click)="dialog.showModal()">
+        Abrir dialog
+    </button>
+    <dialog #dialog [ngClass]="{
+        'bottomsheet': dialogTypeSelected() === 'bottomsheet',
+        'sidebar_left': dialogTypeSelected() === 'sidebar_left',
+        'sidebar_right': dialogTypeSelected() === 'sidebar_right',
+    }">
+        <header>
+            <h2>
+                Hello world!
+            </h2>
+            <button aria-label="fechar dialog" (click)="dialog.close()">
+                ❌
+            </button>
+        </header>
+    </dialog>
+</section>
+<section class="options">
+    <fieldset id="options_fieldset">
+        <legend>
+            Opções
+        </legend>
+        <span class="radio_option">
+            <input type="radio" id="dialog_radio" name="dialog_type" value="dialog" [(ngModel)]="dialogTypeSelected">
+            <label for="dialog_radio">
+                Modal
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="bottomsheet_radio" name="dialog_type" value="bottomsheet"
+                [(ngModel)]="dialogTypeSelected">
+            <label for="bottomsheet_radio">
+                Bottomsheet
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="sidebar_left_radio" name="dialog_type" value="sidebar_left"
+                [(ngModel)]="dialogTypeSelected">
+            <label for="sidebar_left_radio">
+                Sidebar (esquerda)
+            </label>
+        </span>
+        <span class="radio_option">
+            <input type="radio" id="sidebar_right_radio" name="dialog_type" value="sidebar_right"
+                [(ngModel)]="dialogTypeSelected">
+            <label for="sidebar_right_radio">
+                Sidebar (direita)
+            </label>
+        </span>
+    </fieldset>
+</section>
+<app-code-provider [code]="code()"></app-code-provider>
+<app-useful-links-list [usefulLinksList]="usefulLinksList"></app-useful-links-list>

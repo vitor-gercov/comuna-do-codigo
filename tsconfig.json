@@ -28,6 +28,9 @@
       "@types": [
         "app/types"
       ],
+      "@directives": [
+        "app/directives"
+      ],
       "@components/pages": [
         "app/pages"
       ],

@@ -2,13 +2,14 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } fr
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
+import { ComunaMainButtonDirective, ComunaOutlineButtonDirective } from "@directives";
 
 @Component({
   selector: 'app-home',
   imports: [
     MatCardModule,
-    MatButtonModule,
-    RouterLink
+    RouterLink,
+    ComunaOutlineButtonDirective
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

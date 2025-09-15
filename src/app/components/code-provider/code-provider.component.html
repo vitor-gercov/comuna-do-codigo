@@ -2,33 +2,33 @@
 <section class="main_container">
     <section class="tabs">
         @if(html()) {
-        <button (click)="selectedTab.set('html')" [ngClass]="{'--selected': selectedTab() === 'html'}">
+        <button comunaMainButton (click)="selectedTab.set('html')" [ngClass]="{'--selected': selectedTab() === 'html'}">
             HTML
         </button>
         }
         @if(css()) {
-        <button (click)="selectedTab.set('css')" [ngClass]="{'--selected': selectedTab() === 'css'}">
+        <button comunaMainButton (click)="selectedTab.set('css')" [ngClass]="{'--selected': selectedTab() === 'css'}">
             CSS
         </button>
         }
         @if(js()) {
-        <button (click)="selectedTab.set('js')" [ngClass]="{'--selected': selectedTab() === 'js'}">
+        <button comunaMainButton (click)="selectedTab.set('js')" [ngClass]="{'--selected': selectedTab() === 'js'}">
             JS
         </button>
         }
     </section>
     <section class="code">
         <pre>
-        <code>{{ tabContent() }}</code>
-    </pre>
+            <code>{{ tabContent() }}</code>
+        </pre>
+        <div class="options">
+            <button comunaOutlineButton (click)="copyCodeToClipboard()">
+                Copiar código
+            </button>
+            <dialog #feedbackDialog>
+                {{ feedbackMessage() }}
+            </dialog>
+        </div>
     </section>
-    <footer class="options">
-        <button (click)="copyCodeToClipboard()">
-            Copiar código
-        </button>
-        <dialog #feedbackDialog>
-            {{ feedbackMessage() }}
-        </dialog>
-    </footer>
 </section>
 }

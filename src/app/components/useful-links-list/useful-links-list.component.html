@@ -1,14 +1,14 @@
 @if(this.usefulLinksList().length > 0) {
-<section class="main_container">
+<section>
     <h2>
         Conteúdo relacionado
     </h2>
     <ul>
         @for(item of usefulLinksList(); track $index) {
         <li>
-            <a [href]="item.link">
+            <a [href]="item.link" target="_blank">
                 {{ item.text }}
-            </a>
+            </a>;
         </li>
         }
     </ul>
