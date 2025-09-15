@@ -1,8 +1,8 @@
 @if(this.usefulLinksList().length > 0) {
-<details>
-    <summary>
+<section>
+    <h2>
         Conteúdo relacionado
-    </summary>
+    </h2>
     <ul>
         @for(item of usefulLinksList(); track $index) {
         <li>
@@ -12,5 +12,5 @@
         </li>
         }
     </ul>
-</details>
+</section>
 }

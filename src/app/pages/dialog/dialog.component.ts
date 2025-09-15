@@ -288,7 +288,7 @@ export class DialogComponent {
       link: 'https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog'
     },
     {
-      text: 'Video-aula sobre dialogs por Kevin Powell (en) (Youtube)',
+      text: 'Video-aula sobre dialogs por Kevin Powell (Youtube)',
       link: 'https://www.youtube.com/watch?v=TAB_v6yBXIE&ab_channel=KevinPowell'
     },
     {

@@ -1,0 +1,21 @@
+<h1>
+    Tooltip
+</h1>
+<section>
+    <h2>
+        Sandbox
+    </h2>
+    <label for="input">
+        Campo confuso
+    </label>
+    <button id="tooltip_button" popovertarget="tooltip">
+        i
+    </button>
+    <div id="tooltip" popover anchor="tooltip_button">
+        Explicação do campo confuso 😎
+    </div>
+    <input type="text" id="input">
+</section>
+<app-code-provider [code]="code()">
+</app-code-provider>
+<app-useful-links-list [usefulLinksList]="usefulLinksList"></app-useful-links-list>

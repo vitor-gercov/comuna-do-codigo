@@ -2,14 +2,12 @@
     Dialog
 </h1>
 <section class="sandbox">
-    <fieldset>
-        <legend>
-            Sandbox
-        </legend>
-        <button comunaMainButton (click)="dialog.showModal()">
-            Abrir dialog
-        </button>
-    </fieldset>
+    <h2>
+        Sandbox
+    </h2>
+    <button comunaMainButton (click)="dialog.showModal()">
+        Abrir dialog
+    </button>
     <dialog #dialog [ngClass]="{
         'bottomsheet': dialogTypeSelected() === 'bottomsheet',
         'sidebar_left': dialogTypeSelected() === 'sidebar_left',

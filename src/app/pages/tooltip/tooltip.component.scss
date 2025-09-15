@@ -1,0 +1,24 @@
+input {
+    display: block;
+    margin-top: .5rem;
+}
+
+#tooltip_button {
+    border: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    background-color: yellow;
+    cursor: pointer;
+}
+
+[popover] {
+    inset: unset;
+    border: 1px solid rgb(206, 206, 206);
+    top: anchor(bottom);
+    left: anchor(center);
+    position-try: flip-block, flip-inline;
+    border-radius: 0 .5rem .5rem .5rem;
+    padding: .5rem 1rem;
+}
