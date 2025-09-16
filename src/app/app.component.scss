@@ -1,18 +1,12 @@
 mat-toolbar {
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
 }
 
 main {
-    // max-width: 1072px;
     display: grid;
     grid-template-columns: minmax(auto, 1072px);
     justify-content: center;
-    padding-top: 56px;
     padding-inline: 1.5rem;
 }
 
