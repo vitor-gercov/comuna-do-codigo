@@ -18,24 +18,7 @@ export const routes: Routes = [
         loadComponent: () => import('../app/pages/tooltip/tooltip.component').then(component => component.TooltipComponent)
     },
     {
-        path: 'anchor',
-        loadComponent: () => import('../app/pages/anchor/anchor.component').then(component => component.AnchorComponent)
-    },
-    {
-        path: 'flexbox',
-        loadComponent: () => import('../app/pages/flexbox/flexbox.component').then(component => component.FlexboxComponent)
-    },
-    {
-        path: 'componentes',
-        children: [
-            {
-                path: '',
-                loadComponent: () => import('../app/pages/componentes/componentes.component').then(component => component.ComponentesComponent),
-            },
-            {
-                path: 'botoes',
-                loadComponent: () => import('../app/pages/componentes/botoes/botoes.component').then(component => component.BotoesComponent),
-            }
-        ]
+        path: 'accordion',
+        loadComponent: () => import('../app/pages/accordion/accordion.component').then(component => component.AccordionComponent)
     }
 ];
