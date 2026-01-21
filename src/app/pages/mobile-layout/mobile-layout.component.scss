@@ -1,0 +1,18 @@
+.mobile_layout {
+    height: 555px;
+    width: 270px;
+    border-radius: 16px;
+    border: 1px solid yellow;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+
+    header,
+    footer {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    main {
+        // height: 1000px;
+        overflow-y: auto;
+    }
+}
