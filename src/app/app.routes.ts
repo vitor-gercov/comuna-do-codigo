@@ -20,5 +20,9 @@ export const routes: Routes = [
     {
         path: 'accordion',
         loadComponent: () => import('../app/pages/accordion/accordion.component').then(component => component.AccordionComponent)
+    },
+    {
+        path: 'mobile-layout',
+        loadComponent: () => import('../app/pages/mobile-layout/mobile-layout.component').then(component => component.MobileLayoutComponent)
     }
 ];
